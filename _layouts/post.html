@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<section class="section">
+  <article class="about-card glass">
+    <h1>{{ page.title }}</h1>
+    <time class="project-tag" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+    <div class="about-text">
+      {{ content }}
+    </div>
+    <p><a href="/blog/" class="project-tag">← All posts</a></p>
+  </article>
+</section>

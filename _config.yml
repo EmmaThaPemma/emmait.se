@@ -1,0 +1,5 @@
+title: Emma IT
+description: Emma Hansson — Analyst at Truesec. Cybersecurity specialist.
+permalink: /blog/:year-:month-:day-:title/
+markdown: kramdown
+highlighter: rouge
