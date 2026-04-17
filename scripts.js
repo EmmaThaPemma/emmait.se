@@ -70,7 +70,7 @@ document.querySelector('.navbar-search').addEventListener('submit', function (e)
     const url = /^https?:\/\//i.test(val) ? val
               : /^\d/.test(val) ? 'http://' + val
               : 'https://' + val;
-    window.open(url, '_blank');
+    window.location.href = url;
   }
 });
 
