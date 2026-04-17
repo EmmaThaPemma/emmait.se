@@ -1,0 +1,592 @@
+/* ============================================================
+   1. CSS CUSTOM PROPERTIES
+   ============================================================ */
+:root {
+  --hue: 0;
+
+  --bg:         hsl(var(--hue), 50%, 90%);
+  --bg-blob-a:  hsl(var(--hue), 60%, 80%);
+  --bg-blob-b:  hsl(calc(var(--hue) + 60), 55%, 82%);
+
+  --glass-bg:   hsla(0, 0%, 100%, 0.5);
+  --glass-rim:  hsla(0, 0%, 100%, 0.75);
+
+  --text:       hsl(var(--hue), 50%, 18%);
+  --text-muted: hsl(var(--hue), 25%, 40%);
+
+  --accent:     hsl(var(--hue), 70%, 35%);
+  --accent-dim: hsla(var(--hue), 70%, 35%, 0.15);
+}
+
+/* ============================================================
+   2. RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text);
+  min-height: 100vh;
+}
+
+a { color: inherit; }
+
+section[id] {
+  scroll-margin-top: 70px;
+}
+
+/* ============================================================
+   3. ANIMATED BACKGROUND
+   ============================================================ */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 65% 55% at 15% 20%, var(--bg-blob-a) 0%, transparent 70%),
+    radial-gradient(ellipse 55% 50% at 85% 80%, var(--bg-blob-b) 0%, transparent 70%),
+    var(--bg);
+}
+
+/* ============================================================
+   4. TYPOGRAPHY
+   ============================================================ */
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+/* ============================================================
+   5. GLASS UTILITY
+   ============================================================ */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  border: 1px solid var(--glass-rim);
+  border-radius: 16px;
+  box-shadow:
+    0 8px 32px hsla(var(--hue), 30%, 20%, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* ============================================================
+   6. NAVBAR
+   ============================================================ */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1.5rem;
+  border-radius: 0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid var(--glass-rim);
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.site-logo {
+  height: 42px;
+  width: auto;
+  display: block;
+}
+
+.desktop-nav {
+  display: flex;
+  gap: 0.15rem;
+  margin-left: 0.5rem;
+}
+
+.nav-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.4rem 0.65rem;
+  border-radius: 8px;
+  transition: color 0.2s, background 0.2s;
+  white-space: nowrap;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-left: auto;
+}
+
+.nav-controls a {
+  display: flex;
+  align-items: center;
+}
+
+/* Language toggle */
+.lang-toggle {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  background: var(--accent-dim);
+  border: 1px solid hsla(var(--hue), 60%, 35%, 0.25);
+  border-radius: 6px;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+  white-space: nowrap;
+}
+
+.lang-toggle:hover {
+  color: var(--accent);
+  background: hsla(var(--hue), 70%, 35%, 0.22);
+}
+
+/* Hue slider */
+.hue-wrap {
+  display: flex;
+  align-items: center;
+}
+
+input[type="range"]#hue-slider {
+  width: 80px;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(to right,
+    hsl(0, 80%, 60%),
+    hsl(60, 80%, 60%),
+    hsl(120, 80%, 60%),
+    hsl(180, 80%, 60%),
+    hsl(240, 80%, 60%),
+    hsl(300, 80%, 60%),
+    hsl(360, 80%, 60%));
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+input[type="range"]#hue-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: hsl(var(--hue), 70%, 40%);
+  box-shadow: 0 0 6px hsla(var(--hue), 70%, 40%, 0.6);
+  cursor: pointer;
+  transition: background 0.15s, box-shadow 0.15s;
+}
+
+input[type="range"]#hue-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: hsl(var(--hue), 70%, 40%);
+  box-shadow: 0 0 6px hsla(var(--hue), 70%, 40%, 0.6);
+  cursor: pointer;
+  border: none;
+}
+
+/* Social icons */
+.social-icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+  filter: grayscale(1) brightness(0.4);
+  opacity: 0.7;
+  transition: filter 0.2s, opacity 0.2s, transform 0.2s;
+}
+
+.social-icon:hover {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.12);
+}
+
+.social-icon--large {
+  width: 36px;
+  height: 36px;
+}
+
+/* Hamburger — shown only on mobile */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--text);
+  padding: 0.2rem 0.4rem;
+  margin-left: auto;
+  line-height: 1;
+}
+
+/* ============================================================
+   7. MOBILE MENU & OVERLAY
+   ============================================================ */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  background: hsla(var(--hue), 20%, 10%, 0.3);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.nav-overlay.open { display: block; }
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -280px;
+  width: 260px;
+  height: 100dvh;
+  z-index: 200;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 16px 0 0 16px;
+  transition: right 0.3s ease;
+}
+
+.mobile-menu.open { right: 0; }
+
+.mobile-menu nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 1.5rem;
+}
+
+.mobile-menu .nav-link {
+  font-size: 1rem;
+  padding: 0.65rem 0.75rem;
+}
+
+.nav-close {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  padding: 0.25rem;
+}
+
+.mobile-menu-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--glass-rim);
+}
+
+/* ============================================================
+   8. MAIN CONTENT LAYOUT
+   ============================================================ */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* ============================================================
+   9. HERO SECTION
+   ============================================================ */
+.hero-section {
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.search-form {
+  width: 100%;
+  max-width: 560px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.9rem 1.25rem;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  color: var(--text);
+  border: none;
+  outline: none;
+  border-radius: 14px;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: box-shadow 0.2s;
+  display: block;
+}
+
+.search-input::placeholder { color: var(--text-muted); }
+
+.search-input::-webkit-search-cancel-button,
+.search-input::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.search-input:focus {
+  box-shadow:
+    0 0 0 2px var(--accent-dim),
+    0 8px 32px hsla(var(--hue), 30%, 20%, 0.12);
+}
+
+.hero-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(0.75rem, 2vw, 0.95rem);
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+}
+
+/* ============================================================
+   10. ABOUT SECTION
+   ============================================================ */
+.about-card {
+  display: flex;
+  gap: 2.5rem;
+  padding: 2.5rem;
+  align-items: flex-start;
+}
+
+.profile-img {
+  width: clamp(130px, 22%, 200px);
+  flex-shrink: 0;
+  border-radius: 14px;
+  border: 1px solid var(--glass-rim);
+  box-shadow: 0 8px 32px hsla(var(--hue), 30%, 20%, 0.18);
+  object-fit: cover;
+  display: block;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.skill-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  background: var(--accent-dim);
+  border: 1px solid hsla(var(--hue), 60%, 35%, 0.25);
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+
+/* ============================================================
+   11. PROJECTS SECTION
+   ============================================================ */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.project-card {
+  padding: 1.75rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 16px 48px hsla(var(--hue), 30%, 20%, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.project-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.project-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--accent);
+  margin-top: auto;
+  padding-top: 0.75rem;
+}
+
+/* ============================================================
+   12. CONTACT SECTION
+   ============================================================ */
+.contact-card {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  text-align: center;
+}
+
+.email-link {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent-dim);
+  padding-bottom: 0.1rem;
+  transition: border-color 0.2s;
+}
+
+.email-link:hover { border-color: var(--accent); }
+
+.contact-socials {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-socials a {
+  display: flex;
+}
+
+.privacy-details {
+  width: 100%;
+  max-width: 600px;
+}
+
+.privacy-details summary {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.5rem 0;
+  text-align: center;
+}
+
+.privacy-details p {
+  font-size: 0.88rem;
+  margin-top: 0.75rem;
+  text-align: left;
+}
+
+.privacy-details a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* ============================================================
+   13. FOOTER
+   ============================================================ */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem 3rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  opacity: 0.65;
+}
+
+/* ============================================================
+   14. MOBILE RESPONSIVE
+   ============================================================ */
+@media (max-width: 700px) {
+  .desktop-nav { display: none; }
+  .nav-controls .lang-toggle,
+  .nav-controls .hue-wrap,
+  .nav-controls a { display: none; }
+  .hamburger { display: block; }
+
+  main { padding: 0 1rem; }
+
+  .section { padding: 3rem 0; }
+
+  .hero-section { min-height: 60vh; gap: 1.25rem; }
+
+  .about-card {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .profile-img { width: clamp(120px, 55%, 200px); }
+
+  .skill-tags { justify-content: center; }
+
+  .contact-card { padding: 1.5rem; }
+
+  .privacy-details p { text-align: center; }
+}
