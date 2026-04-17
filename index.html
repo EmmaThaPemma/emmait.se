@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="sv">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Emma Hansson — cybersäkerhetsspecialist, IT-Högskolan. Söker praktikplats inom IT-, cloud- och infrastruktursäkerhet.">
+  <meta name="description" content="Emma Hansson — Analyst at Truesec. Cybersecurity specialist.">
   <title>Emma IT</title>
 
   <link rel="shortcut icon" href="favicon.ico">
@@ -25,17 +25,26 @@
       <img src="logo.png" alt="Emma IT" class="site-logo">
     </a>
 
-    <nav class="desktop-nav" aria-label="Sidonavigation">
-      <a href="#home"     class="nav-link" data-sv="Hem"     data-en="Home">Hem</a>
-      <a href="#about"    class="nav-link" data-sv="Om mig"  data-en="About">Om mig</a>
-      <a href="#projects" class="nav-link" data-sv="Projekt" data-en="Projects">Projekt</a>
-      <a href="#contact"  class="nav-link" data-sv="Kontakt" data-en="Contact">Kontakt</a>
+    <nav class="desktop-nav" aria-label="Site navigation">
+      <a href="#home"    class="nav-link" data-sv="Hem"          data-en="Home">Home</a>
+      <a href="#about"   class="nav-link" data-sv="Om mig"       data-en="About">About</a>
+      <a href="#blog"    class="nav-link" data-sv="Blogg"        data-en="Blog">Blog</a>
+      <a href="#contact" class="nav-link" data-sv="Kontakt"      data-en="Contact">Contact</a>
     </nav>
 
+    <form action="https://duckduckgo.com/" method="get" target="_blank" class="navbar-search" role="search">
+      <input
+        type="search"
+        name="q"
+        class="navbar-search-input"
+        autofocus
+        aria-label="Search DuckDuckGo">
+    </form>
+
     <div class="nav-controls">
-      <button class="lang-toggle" aria-label="Byt språk / Switch language">EN</button>
+      <button class="lang-toggle" aria-label="Switch language / Byt språk">SV</button>
       <div class="hue-wrap">
-        <input type="range" id="hue-slider" min="0" max="360" value="0" aria-label="Ändra färgtema">
+        <input type="range" id="hue-slider" min="0" max="360" value="0" aria-label="Colour theme">
       </div>
       <a href="https://github.com/EmmaThaPemma" target="_blank" rel="noopener" aria-label="GitHub">
         <img src="github-142-svgrepo-com.svg" alt="GitHub" class="social-icon">
@@ -45,20 +54,20 @@
       </a>
     </div>
 
-    <button class="hamburger" aria-label="Öppna meny" aria-expanded="false">☰</button>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">☰</button>
   </header>
 
   <!-- MOBILE SLIDE-IN MENU -->
-  <div class="mobile-menu glass" role="dialog" aria-label="Meny">
-    <button class="nav-close" aria-label="Stäng meny">✕</button>
-    <nav aria-label="Mobilnavigation">
-      <a href="#home"     class="nav-link" data-sv="Hem"     data-en="Home">Hem</a>
-      <a href="#about"    class="nav-link" data-sv="Om mig"  data-en="About">Om mig</a>
-      <a href="#projects" class="nav-link" data-sv="Projekt" data-en="Projects">Projekt</a>
-      <a href="#contact"  class="nav-link" data-sv="Kontakt" data-en="Contact">Kontakt</a>
+  <div class="mobile-menu glass" role="dialog" aria-label="Menu">
+    <button class="nav-close" aria-label="Close menu">✕</button>
+    <nav aria-label="Mobile navigation">
+      <a href="#home"    class="nav-link" data-sv="Hem"     data-en="Home">Home</a>
+      <a href="#about"   class="nav-link" data-sv="Om mig"  data-en="About">About</a>
+      <a href="#blog"    class="nav-link" data-sv="Blogg"   data-en="Blog">Blog</a>
+      <a href="#contact" class="nav-link" data-sv="Kontakt" data-en="Contact">Contact</a>
     </nav>
     <div class="mobile-menu-footer">
-      <button class="lang-toggle" aria-label="Byt språk / Switch language">EN</button>
+      <button class="lang-toggle" aria-label="Switch language / Byt språk">SV</button>
     </div>
   </div>
 
@@ -67,69 +76,53 @@
 
     <!-- HERO -->
     <section id="home" class="section hero-section">
-      <form action="https://duckduckgo.com/" method="get" target="_blank" class="search-form" role="search">
-        <input
-          type="search"
-          name="q"
-          class="search-input glass"
-          placeholder="Sök med DuckDuckGo..."
-          data-sv="Sök med DuckDuckGo..."
-          data-en="Search DuckDuckGo..."
-          aria-label="Sökfält">
-      </form>
-      <h1 data-sv="Hej, jag är Emma!" data-en="Hi, I'm Emma!">Hej, jag är Emma!</h1>
+      <h1 data-sv="Välkommen till Emma IT!" data-en="Welcome to Emma IT!">Welcome to Emma IT!</h1>
       <p class="hero-sub"
-         data-sv="Cybersäkerhetsspecialist · IT-Högskolan · Söker praktikplats"
-         data-en="Cybersecurity Specialist · IT-Högskolan · Seeking internship">
-        Cybersäkerhetsspecialist · IT-Högskolan · Söker praktikplats
+         data-sv="Analytiker på Truesec"
+         data-en="Analyst at Truesec">
+        Analyst at Truesec
       </p>
     </section>
 
     <!-- ABOUT -->
     <section id="about" class="section">
       <div class="about-card glass">
-        <img src="profile.jpg" alt="Porträtt av Emma Hansson" class="profile-img">
+        <img src="profile.jpg" alt="Portrait of Emma Hansson" class="profile-img">
         <div class="about-text">
-          <h2 data-sv="Om mig" data-en="About me">Om mig</h2>
-          <p data-sv="Jag studerar till cybersäkerhetsspecialist på IT-Högskolan och söker praktikplats inom IT-, cloud- eller infrastruktursäkerhet. Hör av dig om du eller någon du känner kan ta emot en intern!"
-             data-en="I'm studying to become a cybersecurity specialist at IT-Högskolan and seeking an internship in IT, cloud, or infrastructure security. Reach out if you or someone you know can take on an intern!">
-            Jag studerar till cybersäkerhetsspecialist på IT-Högskolan och söker praktikplats inom IT-, cloud- eller infrastruktursäkerhet. Hör av dig om du eller någon du känner kan ta emot en intern!
+          <h2 data-sv="Om mig" data-en="About me">About me</h2>
+          <p data-sv="Jag är analytiker på Truesec och studerade till cybersäkerhetsspecialist på IT-Högskolan. Jag har ett stort intresse för IT-säkerhet och hur man skyddar system och infrastruktur."
+             data-en="I'm an analyst at Truesec and studied to become a cybersecurity specialist at IT-Högskolan. I have a strong interest in IT security and how to protect systems and infrastructure.">
+            I'm an analyst at Truesec and studied to become a cybersecurity specialist at IT-Högskolan. I have a strong interest in IT security and how to protect systems and infrastructure.
           </p>
-          <p data-sv="Utöver studierna har jag ett stort intresse för teknik — både mjukvara och hårdvara. Jag delar projekt på GitHub och lägger upp om teknik på LinkedIn."
-             data-en="Beyond my studies I have a keen interest in technology — both software and hardware. I share projects on GitHub and post about tech on LinkedIn.">
-            Utöver studierna har jag ett stort intresse för teknik — både mjukvara och hårdvara. Jag delar projekt på GitHub och lägger upp om teknik på LinkedIn.
+          <p data-sv="Utöver jobbet har jag ett stort intresse för teknik — både mjukvara och hårdvara. Jag delar projekt på GitHub och lägger upp om teknik på LinkedIn."
+             data-en="Outside of work I have a keen interest in technology — both software and hardware. I share projects on GitHub and post about tech on LinkedIn.">
+            Outside of work I have a keen interest in technology — both software and hardware. I share projects on GitHub and post about tech on LinkedIn.
           </p>
-          <div class="skill-tags">
-            <span class="skill-tag" data-sv="CTF"              data-en="CTF">CTF</span>
-            <span class="skill-tag" data-sv="HackTheBox"       data-en="HackTheBox">HackTheBox</span>
-            <span class="skill-tag" data-sv="Linux"            data-en="Linux">Linux</span>
-            <span class="skill-tag" data-sv="Nätverkssäkerhet" data-en="Network Security">Nätverkssäkerhet</span>
-            <span class="skill-tag" data-sv="Cloud"            data-en="Cloud">Cloud</span>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section">
-      <h2 class="section-title" data-sv="Projekt" data-en="Projects">Projekt</h2>
+    <!-- BLOG -->
+    <section id="blog" class="section">
+      <h2 class="section-title" data-sv="Blogg" data-en="Blog">Blog</h2>
       <div class="projects-grid">
-        <a href="https://github.com/EmmaThaPemma" target="_blank" rel="noopener" class="project-card glass">
-          <span class="project-tag">GitHub</span>
-          <h3 data-sv="Se alla projekt" data-en="View all projects">Se alla projekt</h3>
-          <p data-sv="Kolla in mitt GitHub-konto för att se vad jag jobbar med."
-             data-en="Check out my GitHub profile to see what I'm working on.">
-            Kolla in mitt GitHub-konto för att se vad jag jobbar med.
-          </p>
-          <span class="project-link" data-sv="Öppna GitHub →" data-en="Open GitHub →">Öppna GitHub →</span>
-        </a>
+        <div class="project-card glass">
+          <span class="project-tag" data-sv="Blogg" data-en="Blog">Blog</span>
+          <h3 data-sv="Inlägg #1" data-en="Post #1">Post #1</h3>
+          <p data-sv="Kommer snart." data-en="Coming soon.">Coming soon.</p>
+        </div>
+        <div class="project-card glass">
+          <span class="project-tag" data-sv="Blogg" data-en="Blog">Blog</span>
+          <h3 data-sv="Inlägg #2" data-en="Post #2">Post #2</h3>
+          <p data-sv="Kommer snart." data-en="Coming soon.">Coming soon.</p>
+        </div>
       </div>
     </section>
 
     <!-- CONTACT -->
     <section id="contact" class="section">
       <div class="contact-card glass">
-        <h2 data-sv="Kontakt" data-en="Contact">Kontakt</h2>
+        <h2 data-sv="Kontakt" data-en="Contact">Contact</h2>
         <a href="mailto:kontakt@emmait.se" class="email-link">kontakt@emmait.se</a>
         <div class="contact-socials">
           <a href="https://github.com/EmmaThaPemma" target="_blank" rel="noopener" aria-label="GitHub">
@@ -139,22 +132,18 @@
             <img src="linkedin-svgrepo-com.svg" alt="LinkedIn" class="social-icon social-icon--large">
           </a>
         </div>
-        <details class="privacy-details">
-          <summary data-sv="Integritetspolicy" data-en="Privacy policy">Integritetspolicy</summary>
+        <div class="privacy-text">
+          <h3 data-sv="Integritetspolicy" data-en="Privacy policy">Privacy policy</h3>
           <p data-sv="Denna sida använder inga kakor eller andra tredjeparts-tekniker för att spara information om dig. Däremot hostas sidan via GitHub Pages som samlar in din IP-adress. Jag rekommenderar att använda program som blockerar spårning, till exempel Privacy Badger."
              data-en="This site uses no cookies or third-party tracking technologies. It is hosted via GitHub Pages, which collects your IP address. I recommend using tracker-blocking software such as Privacy Badger.">
-            Denna sida använder inga kakor eller andra tredjeparts-tekniker för att spara information om dig. Däremot hostas sidan via GitHub Pages som samlar in din IP-adress. Jag rekommenderar att använda program som blockerar spårning, till exempel Privacy Badger.
+            This site uses no cookies or third-party tracking technologies. It is hosted via GitHub Pages, which collects your IP address. I recommend using tracker-blocking software such as Privacy Badger.
           </p>
           <a href="https://www.eff.org/privacybadger" target="_blank" rel="noopener">Privacy Badger</a>
-        </details>
+        </div>
       </div>
     </section>
 
   </main>
-
-  <footer class="site-footer">
-    <p>© 2025 Emma Hansson · emmait.se</p>
-  </footer>
 
   <script src="scripts.js"></script>
 </body>

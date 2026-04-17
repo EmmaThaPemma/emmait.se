@@ -14,7 +14,7 @@ hueSlider.addEventListener('input', function () {
 });
 
 // Bilingual toggle
-let lang = localStorage.getItem('emmait-lang') || 'sv';
+let lang = localStorage.getItem('emmait-lang') || 'en';
 
 function applyLang(l) {
   lang = l;
