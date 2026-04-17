@@ -1,16 +1,14 @@
-const hueSlider = document.getElementById('hue-slider');
-
 function updateHue(hue) {
-  hueSlider.value = hue;
+  document.querySelectorAll('.hue-slider').forEach(s => s.value = hue);
   document.documentElement.style.setProperty('--hue', hue);
 }
 
-const savedHue = localStorage.getItem('emmait-hue');
-if (savedHue) updateHue(savedHue);
+updateHue(Math.floor(Math.random() * 360));
 
-hueSlider.addEventListener('input', function () {
-  updateHue(hueSlider.value);
-  localStorage.setItem('emmait-hue', hueSlider.value);
+document.querySelectorAll('.hue-slider').forEach(slider => {
+  slider.addEventListener('input', function () {
+    updateHue(this.value);
+  });
 });
 
 // Language toggle — cycles EN → SV → NL → EN
