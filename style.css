@@ -168,23 +168,22 @@ p {
 /* Navbar search bar */
 .navbar-search {
   flex: 1;
-  max-width: 280px;
-  margin-left: auto;
 }
 
 .navbar-search-input {
   width: 100%;
-  padding: 0.42rem 0.9rem;
+  padding: 0.45rem 1rem;
   font-size: 0.9rem;
   font-family: 'Roboto', sans-serif;
   color: var(--text);
-  background: hsla(0, 0%, 100%, 0.2);
-  border: 1px solid hsla(0, 0%, 100%, 0.18);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-rim);
   border-radius: 20px;
   outline: none;
   -webkit-appearance: none;
   appearance: none;
-  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transition: border-color 0.2s, box-shadow 0.2s;
   display: block;
 }
 
@@ -194,9 +193,8 @@ p {
 .navbar-search-input::-webkit-search-decoration { -webkit-appearance: none; }
 
 .navbar-search-input:focus {
-  border-color: hsla(0, 0%, 100%, 0.55);
-  background: hsla(0, 0%, 100%, 0.35);
-  box-shadow: 0 0 0 2px var(--accent-dim);
+  border-color: hsla(var(--hue), 60%, 40%, 0.4);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 0 0 2px var(--accent-dim);
 }
 
 .nav-controls a {
@@ -269,18 +267,17 @@ input[type="range"]#hue-slider::-moz-range-thumb {
   border: none;
 }
 
-/* Social icons */
+/* Social icons — hue-matched via CSS filter chain */
 .social-icon {
   width: 24px;
   height: 24px;
   display: block;
-  filter: grayscale(1) brightness(0.4);
-  opacity: 0.7;
-  transition: filter 0.2s, opacity 0.2s, transform 0.2s;
+  filter: brightness(0) sepia(1) saturate(4) hue-rotate(calc(var(--hue) * 1deg));
+  opacity: 0.55;
+  transition: opacity 0.2s, transform 0.2s;
 }
 
 .social-icon:hover {
-  filter: none;
   opacity: 1;
   transform: scale(1.12);
 }

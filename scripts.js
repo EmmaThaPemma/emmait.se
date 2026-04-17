@@ -13,8 +13,13 @@ hueSlider.addEventListener('input', function () {
   localStorage.setItem('emmait-hue', hueSlider.value);
 });
 
-// Bilingual toggle
+// Language toggle — cycles EN → SV → NL → EN
+const LANGS = ['en', 'sv', 'nl'];
 let lang = localStorage.getItem('emmait-lang') || 'en';
+
+function nextLang() {
+  return LANGS[(LANGS.indexOf(lang) + 1) % LANGS.length];
+}
 
 function applyLang(l) {
   lang = l;
@@ -30,12 +35,12 @@ function applyLang(l) {
     }
   });
   document.querySelectorAll('.lang-toggle').forEach(btn => {
-    btn.textContent = l === 'sv' ? 'EN' : 'SV';
+    btn.textContent = nextLang().toUpperCase();
   });
 }
 
 document.querySelectorAll('.lang-toggle').forEach(btn =>
-  btn.addEventListener('click', () => applyLang(lang === 'sv' ? 'en' : 'sv')));
+  btn.addEventListener('click', () => applyLang(nextLang())));
 
 applyLang(lang);
 
