@@ -74,35 +74,6 @@ document.querySelector('.navbar-search').addEventListener('submit', function (e)
   }
 });
 
-// Search autocomplete via DuckDuckGo /ac/ endpoint
-const searchInput = document.querySelector('.navbar-search-input');
-const suggestionList = document.getElementById('search-suggestions');
-let suggestTimer = null;
-let suggestController = null;
-
-searchInput.addEventListener('input', () => {
-  const val = searchInput.value.trim();
-  clearTimeout(suggestTimer);
-  if (suggestController) suggestController.abort();
-  if (!val || looksLikeUrl(val)) {
-    suggestionList.innerHTML = '';
-    return;
-  }
-  suggestTimer = setTimeout(() => {
-    suggestController = new AbortController();
-    fetch(`https://duckduckgo.com/ac/?q=${encodeURIComponent(val)}&type=list`, { signal: suggestController.signal })
-      .then(r => r.json())
-      .then(data => {
-        const items = Array.isArray(data) && Array.isArray(data[1]) ? data[1] : [];
-        suggestionList.innerHTML = items
-          .slice(0, 8)
-          .map(s => `<option value="${s.replace(/"/g, '&quot;')}">`)
-          .join('');
-      })
-      .catch(() => { /* aborted or offline — ignore */ });
-  }, 300);
-});
-
 // Mobile menu toggle
 const hamburger = document.querySelector('.hamburger');
 const mobileMenu = document.querySelector('.mobile-menu');
