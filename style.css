@@ -463,14 +463,6 @@ main {
   text-transform: uppercase;
 }
 
-.project-link {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.8rem;
-  color: var(--accent);
-  margin-top: auto;
-  padding-top: 0.75rem;
-}
-
 /* ============================================================
    12. CONTACT SECTION
    ============================================================ */
