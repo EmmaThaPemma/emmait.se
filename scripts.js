@@ -57,6 +57,25 @@ const sectionObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.4 });
 document.querySelectorAll('section[id]').forEach(s => sectionObserver.observe(s));
 
+// Smart search — navigate directly to URLs/IPs, otherwise DuckDuckGo
+function looksLikeUrl(val) {
+  if (/^https?:\/\//i.test(val)) return true;
+  if (/^\d{1,3}(\.\d{1,3}){3}(:\d+)?(\/.*)?$/.test(val)) return true;
+  if (/^[a-z0-9-]+(\.[a-z]{2,})+([/?].*)?$/i.test(val) && !val.includes(' ')) return true;
+  return false;
+}
+
+document.querySelector('.navbar-search').addEventListener('submit', function (e) {
+  const val = this.querySelector('input[name="q"]').value.trim();
+  if (looksLikeUrl(val)) {
+    e.preventDefault();
+    const url = /^https?:\/\//i.test(val) ? val
+              : /^\d/.test(val) ? 'http://' + val
+              : 'https://' + val;
+    window.open(url, '_blank');
+  }
+});
+
 // Mobile menu toggle
 const hamburger = document.querySelector('.hamburger');
 const mobileMenu = document.querySelector('.mobile-menu');
