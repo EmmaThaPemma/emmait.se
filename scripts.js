@@ -68,6 +68,9 @@ document.querySelectorAll('section[id]').forEach(s => sectionObserver.observe(s)
   const MAX_SUGGESTIONS = 8;
   const DEBOUNCE_MS = 150;
   const MIN_CHARS = 2;
+  // Cloudflare Worker proxy — DDG's ac/ endpoint does not send CORS headers.
+  // Replace after deploying _cloudflare-worker/ddg-ac.js.
+  const AC_ENDPOINT = 'https://ddg-ac.avid-hunch-4l.workers.dev/';
 
   let history = [];
   try { history = JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]'); }
@@ -143,11 +146,12 @@ document.querySelectorAll('section[id]').forEach(s => sectionObserver.observe(s)
   }
 
   async function fetchDDG(q) {
+    if (AC_ENDPOINT.includes('REPLACE-ME')) return [];
     if (abortCtrl) abortCtrl.abort();
     abortCtrl = new AbortController();
     try {
       const res = await fetch(
-        'https://duckduckgo.com/ac/?q=' + encodeURIComponent(q) + '&type=list',
+        AC_ENDPOINT + '?q=' + encodeURIComponent(q),
         { signal: abortCtrl.signal }
       );
       if (!res.ok) return [];
