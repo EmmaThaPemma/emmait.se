@@ -13,7 +13,8 @@ document.querySelectorAll('.hue-slider').forEach(slider => {
 
 // Language toggle — cycles EN → SV → NL → EN
 const LANGS = ['en', 'sv', 'nl'];
-let lang = localStorage.getItem('emmait-lang') || 'en';
+let lang = localStorage.getItem('emmait-lang');
+if (!LANGS.includes(lang)) lang = 'en';
 
 function nextLang() {
   return LANGS[(LANGS.indexOf(lang) + 1) % LANGS.length];
