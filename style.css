@@ -169,6 +169,7 @@ p {
 /* Navbar search bar */
 .navbar-search {
   flex: 1;
+  position: relative;
 }
 
 .navbar-search-input {
@@ -196,6 +197,39 @@ p {
 .navbar-search-input:focus {
   border-color: hsla(var(--hue), 60%, 40%, 0.4);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 0 0 2px var(--accent-dim);
+}
+
+/* Autocomplete dropdown */
+.search-suggestions {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  z-index: 120;
+  list-style: none;
+  padding: 4px 0;
+  margin: 0;
+  max-height: 60vh;
+  overflow-y: auto;
+  font-size: 0.88rem;
+}
+
+.search-suggestions[hidden] { display: none; }
+
+.search-suggestions li {
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background 0.12s;
+}
+
+.search-suggestions li:hover,
+.search-suggestions li.active {
+  background: var(--accent-dim);
+  color: var(--accent);
 }
 
 .nav-controls a {
