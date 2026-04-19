@@ -1,172 +1,71 @@
-<!doctype html>
-<html lang="en">
+---
+layout: default
+---
+<!-- HERO -->
+<section id="home" class="section hero-section">
+  <h1 data-sv="Hej, jag är Emma!" data-en="Hi, I'm Emma!" data-nl="Hoi, ik ben Emma!">Hi, I'm Emma!</h1>
+  <p class="hero-sub"
+     data-sv="Cybersäkerhetsspecialist · IT-Högskolan · Analytiker hos Truesec"
+     data-en="Cybersecurity Specialist · IT-Högskolan · Analyst at Truesec"
+     data-nl="Cybersecurityspecialist · IT-Högskolan · Analist bij Truesec">
+    Analyst at Truesec
+  </p>
+</section>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Emma Hansson — Analyst at Truesec. Cybersecurity specialist.">
-  <title>Emma IT</title>
-
-  <link rel="shortcut icon" href="favicon.ico">
-  <link rel="stylesheet" href="style.css">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
-</head>
-
-<body>
-  <!-- Overlay behind mobile menu -->
-  <div class="nav-overlay"></div>
-
-  <!-- STICKY NAVBAR -->
-  <header class="navbar glass">
-    <a href="#home" class="logo-link">
-      <img src="logo.png" alt="Emma IT" class="site-logo" width="920" height="162">
-    </a>
-
-    <nav class="desktop-nav" aria-label="Site navigation">
-      <a href="#home"    class="nav-link" data-sv="Hem"     data-en="Home"    data-nl="Thuis">Home</a>
-      <a href="#about"   class="nav-link" data-sv="Om mig"  data-en="About"   data-nl="Over mij">About</a>
-      <a href="#blog"    class="nav-link" data-sv="Blogg"   data-en="Blog"    data-nl="Blog">Blog</a>
-      <a href="#contact" class="nav-link" data-sv="Kontakt" data-en="Contact" data-nl="Contact">Contact</a>
-    </nav>
-
-    <form action="https://duckduckgo.com/" method="get" class="navbar-search" role="search">
-      <input
-        type="search"
-        name="q"
-        class="navbar-search-input"
-        autocomplete="off"
-        spellcheck="false"
-        autofocus
-        aria-label="Search or enter address"
-        aria-autocomplete="list"
-        aria-controls="search-suggestions"
-        aria-expanded="false">
-      <ul id="search-suggestions" class="search-suggestions glass" role="listbox" hidden></ul>
-    </form>
-
-    <div class="nav-controls">
-      <button class="lang-toggle" aria-label="Switch language">SV</button>
-      <div class="hue-wrap">
-        <input type="range" id="hue-slider" class="hue-slider" min="0" max="360" value="0" aria-label="Colour theme">
-      </div>
-      <a href="https://github.com/EmmaThaPemma" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-        <img src="github-142-svgrepo-com.svg" alt="GitHub" class="social-icon">
-      </a>
-      <a href="https://www.linkedin.com/in/emma-it/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-        <img src="linkedin-svgrepo-com.svg" alt="LinkedIn" class="social-icon">
-      </a>
-    </div>
-
-    <button class="hamburger" aria-label="Open menu" aria-expanded="false">☰</button>
-  </header>
-
-  <!-- MOBILE SLIDE-IN MENU -->
-  <div class="mobile-menu glass" role="dialog" aria-label="Menu">
-    <button class="nav-close" aria-label="Close menu">✕</button>
-    <nav aria-label="Mobile navigation">
-      <a href="#home"    class="nav-link" data-sv="Hem"     data-en="Home"    data-nl="Thuis">Home</a>
-      <a href="#about"   class="nav-link" data-sv="Om mig"  data-en="About"   data-nl="Over mij">About</a>
-      <a href="#blog"    class="nav-link" data-sv="Blogg"   data-en="Blog"    data-nl="Blog">Blog</a>
-      <a href="#contact" class="nav-link" data-sv="Kontakt" data-en="Contact" data-nl="Contact">Contact</a>
-    </nav>
-    <div class="mobile-menu-footer">
-      <div class="mobile-hue-wrap">
-        <input type="range" class="hue-slider" min="0" max="360" value="0" aria-label="Colour theme">
-      </div>
-      <div class="mobile-controls">
-        <a href="https://github.com/EmmaThaPemma" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <img src="github-142-svgrepo-com.svg" alt="GitHub" class="social-icon">
-        </a>
-        <a href="https://www.linkedin.com/in/emma-it/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <img src="linkedin-svgrepo-com.svg" alt="LinkedIn" class="social-icon">
-        </a>
-        <button class="lang-toggle" aria-label="Switch language">SV</button>
-      </div>
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="about-card glass">
+    <img src="/img/profile.jpg" alt="Portrait of Emma Hansson" class="profile-img">
+    <div class="about-text">
+      <h2 data-sv="Om mig" data-en="About me" data-nl="Over mij">About me</h2>
+      <p data-sv="Jag är analytiker på Truesec och studerade till cybersäkerhetsspecialist på IT-Högskolan. Jag har ett stort intresse för IT-säkerhet och hur man skyddar system och infrastruktur."
+         data-en="I'm an analyst at Truesec and studied to become a cybersecurity specialist at IT-Högskolan. I have a strong interest in IT security and how to protect systems and infrastructure."
+         data-nl="Ik ben analist bij Truesec en studeerde tot cybersecurityspecialist aan IT-Högskolan. Ik heb een sterke interesse in IT-beveiliging en hoe systemen en infrastructuur te beschermen.">
+        I'm an analyst at Truesec and studied to become a cybersecurity specialist at IT-Högskolan. I have a strong interest in IT security and how to protect systems and infrastructure.
+      </p>
+      <p data-sv="Utöver jobbet har jag ett stort intresse för teknik — både mjukvara och hårdvara. Jag delar projekt på GitHub och lägger upp om teknik på LinkedIn."
+         data-en="Outside of work I have a keen interest in technology — both software and hardware. I share projects on GitHub and post about tech on LinkedIn."
+         data-nl="Naast mijn werk heb ik een grote interesse in technologie — zowel software als hardware. Ik deel projecten op GitHub en post over tech op LinkedIn.">
+        Outside of work I have a keen interest in technology — both software and hardware. I share projects on GitHub and post about tech on LinkedIn.
+      </p>
     </div>
   </div>
+</section>
 
-  <!-- MAIN CONTENT -->
-  <main>
+<!-- BLOG -->
+<section id="blog" class="section">
+  <h2 class="section-title" data-sv="Blogg" data-en="Blog" data-nl="Blog">Blog</h2>
+  <div class="projects-grid">
+    <a href="/blog/" class="project-card glass">
+      <span class="project-tag" data-sv="Blogg" data-en="Blog" data-nl="Blog">Blog</span>
+      <h3 data-sv="Läs bloggen" data-en="Read the blog" data-nl="Lees de blog">Read the blog</h3>
+      <p data-sv="Alla inlägg →" data-en="All posts →" data-nl="Alle berichten →">All posts →</p>
+    </a>
+  </div>
+</section>
 
-    <!-- HERO -->
-    <section id="home" class="section hero-section">
-      <h1 data-sv="Hej, jag är Emma!" data-en="Hi, I'm Emma!" data-nl="Hoi, ik ben Emma!">Hi, I'm Emma!</h1>
-      <p class="hero-sub"
-         data-sv="Cybersäkerhetsspecialist · IT-Högskolan · Analytiker hos Truesec"
-         data-en="Cybersecurity Specialist · IT-Högskolan · Analyst at Truesec"
-         data-nl="Cybersecurityspecialist · IT-Högskolan · Analist bij Truesec">
-        Analyst at Truesec
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="contact-card glass">
+    <h2 data-sv="Kontakt" data-en="Contact" data-nl="Contact">Contact</h2>
+    <a href="mailto:kontakt@emmait.se" class="email-link">kontakt@emmait.se</a>
+    <div class="contact-socials">
+      <a href="https://github.com/EmmaThaPemma" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <img src="/img/github.svg" alt="GitHub" class="social-icon social-icon--large">
+      </a>
+      <a href="https://www.linkedin.com/in/emma-it/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <img src="/img/linkedin.svg" alt="LinkedIn" class="social-icon social-icon--large">
+      </a>
+    </div>
+    <div class="privacy-text">
+      <h3 data-sv="Integritetspolicy" data-en="Privacy policy" data-nl="Privacybeleid">Privacy policy</h3>
+      <p data-sv="Denna sida använder inga kakor eller andra tredjeparts-tekniker för att spara information om dig. Däremot hostas sidan via GitHub Pages som samlar in din IP-adress. Jag rekommenderar att använda program som blockerar spårning, till exempel Privacy Badger."
+         data-en="This site uses no cookies or third-party tracking technologies. It is hosted via GitHub Pages, which collects your IP address. I recommend using tracker-blocking software such as Privacy Badger."
+         data-nl="Deze site gebruikt geen cookies of tracking-technologieën van derden. De site wordt gehost via GitHub Pages, dat uw IP-adres registreert. Ik raad aan om software te gebruiken die trackers blokkeert, zoals Privacy Badger.">
+        This site uses no cookies or third-party tracking technologies. It is hosted via GitHub Pages, which collects your IP address. I recommend using tracker-blocking software such as Privacy Badger.
       </p>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section">
-      <div class="about-card glass">
-        <img src="profile.jpg" alt="Portrait of Emma Hansson" class="profile-img" > <!-- width="464" height="600" loading="lazy"-->
-        <div class="about-text">
-          <h2 data-sv="Om mig" data-en="About me" data-nl="Over mij">About me</h2>
-          <p data-sv="Jag är analytiker på Truesec och studerade till cybersäkerhetsspecialist på IT-Högskolan. Jag har ett stort intresse för IT-säkerhet och hur man skyddar system och infrastruktur."
-             data-en="I'm an analyst at Truesec and studied to become a cybersecurity specialist at IT-Högskolan. I have a strong interest in IT security and how to protect systems and infrastructure."
-             data-nl="Ik ben analist bij Truesec en studeerde tot cybersecurityspecialist aan IT-Högskolan. Ik heb een sterke interesse in IT-beveiliging en hoe systemen en infrastructuur te beschermen.">
-            I'm an analyst at Truesec and studied to become a cybersecurity specialist at IT-Högskolan. I have a strong interest in IT security and how to protect systems and infrastructure.
-          </p>
-          <p data-sv="Utöver jobbet har jag ett stort intresse för teknik — både mjukvara och hårdvara. Jag delar projekt på GitHub och lägger upp om teknik på LinkedIn."
-             data-en="Outside of work I have a keen interest in technology — both software and hardware. I share projects on GitHub and post about tech on LinkedIn."
-             data-nl="Naast mijn werk heb ik een grote interesse in technologie — zowel software als hardware. Ik deel projecten op GitHub en post over tech op LinkedIn.">
-            Outside of work I have a keen interest in technology — both software and hardware. I share projects on GitHub and post about tech on LinkedIn.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- BLOG -->
-    <section id="blog" class="section">
-      <h2 class="section-title" data-sv="Blogg" data-en="Blog" data-nl="Blog">Blog</h2>
-      <div class="projects-grid">
-        <a href="/blog/" class="project-card glass">
-          <span class="project-tag" data-sv="Blogg" data-en="Blog" data-nl="Blog">Blog</span>
-          <h3 data-sv="Läs bloggen" data-en="Read the blog" data-nl="Lees de blog">Read the blog</h3>
-          <p data-sv="Alla inlägg →" data-en="All posts →" data-nl="Alle berichten →">All posts →</p>
-        </a>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <div class="contact-card glass">
-        <h2 data-sv="Kontakt" data-en="Contact" data-nl="Contact">Contact</h2>
-        <a href="mailto:kontakt@emmait.se" class="email-link">kontakt@emmait.se</a>
-        <div class="contact-socials">
-          <a href="https://github.com/EmmaThaPemma" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <img src="github-142-svgrepo-com.svg" alt="GitHub" class="social-icon social-icon--large">
-          </a>
-          <a href="https://www.linkedin.com/in/emma-it/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <img src="linkedin-svgrepo-com.svg" alt="LinkedIn" class="social-icon social-icon--large">
-          </a>
-        </div>
-        <div class="privacy-text">
-          <h3 data-sv="Integritetspolicy" data-en="Privacy policy" data-nl="Privacybeleid">Privacy policy</h3>
-          <p data-sv="Denna sida använder inga kakor eller andra tredjeparts-tekniker för att spara information om dig. Däremot hostas sidan via GitHub Pages som samlar in din IP-adress. Jag rekommenderar att använda program som blockerar spårning, till exempel Privacy Badger."
-             data-en="This site uses no cookies or third-party tracking technologies. It is hosted via GitHub Pages, which collects your IP address. I recommend using tracker-blocking software such as Privacy Badger."
-             data-nl="Deze site gebruikt geen cookies of tracking-technologieën van derden. De site wordt gehost via GitHub Pages, dat uw IP-adres registreert. Ik raad aan om software te gebruiken die trackers blokkeert, zoals Privacy Badger.">
-            This site uses no cookies or third-party tracking technologies. It is hosted via GitHub Pages, which collects your IP address. I recommend using tracker-blocking software such as Privacy Badger.
-          </p>
-          <a href="https://www.eff.org/privacybadger" target="_blank" rel="noopener noreferrer">Privacy Badger</a>
-          <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection" target="_blank" rel="noopener noreferrer">GitHub Pages Privacy Policy</a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <p>Emma Hansson · emmait.se</p>
-  </footer>
-
-  <script src="scripts.js" defer></script>
-</body>
-
-</html>
+      <a href="https://www.eff.org/privacybadger" target="_blank" rel="noopener noreferrer">Privacy Badger</a>
+      <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection" target="_blank" rel="noopener noreferrer">GitHub Pages Privacy Policy</a>
+    </div>
+  </div>
+</section>

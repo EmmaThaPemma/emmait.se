@@ -1,83 +1,11 @@
-<!-- Navbar + mobile menu mirror index.html. If you edit one, edit the other. -->
 <!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="{{ site.description }}">
-  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
-
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="stylesheet" href="/style.css">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
-</head>
-
+{% include head.html %}
 <body>
   <div class="nav-overlay"></div>
 
-  <header class="navbar glass">
-    <a href="/" class="logo-link">
-      <img src="/logo.png" alt="Emma IT" class="site-logo" width="920" height="162">
-    </a>
-
-    <nav class="desktop-nav" aria-label="Site navigation">
-      <a href="/#home"    class="nav-link" data-sv="Hem"     data-en="Home"    data-nl="Thuis">Home</a>
-      <a href="/#about"   class="nav-link" data-sv="Om mig"  data-en="About"   data-nl="Over mij">About</a>
-      <a href="/blog/"    class="nav-link" data-sv="Blogg"   data-en="Blog"    data-nl="Blog">Blog</a>
-      <a href="/#contact" class="nav-link" data-sv="Kontakt" data-en="Contact" data-nl="Contact">Contact</a>
-    </nav>
-
-    <form action="https://duckduckgo.com/" method="get" class="navbar-search" role="search">
-      <input
-        type="search"
-        name="q"
-        class="navbar-search-input"
-        aria-label="Search DuckDuckGo">
-    </form>
-
-    <div class="nav-controls">
-      <button class="lang-toggle" aria-label="Switch language">SV</button>
-      <div class="hue-wrap">
-        <input type="range" id="hue-slider" class="hue-slider" min="0" max="360" value="0" aria-label="Colour theme">
-      </div>
-      <a href="https://github.com/EmmaThaPemma" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-        <img src="/github-142-svgrepo-com.svg" alt="GitHub" class="social-icon">
-      </a>
-      <a href="https://www.linkedin.com/in/emma-it/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-        <img src="/linkedin-svgrepo-com.svg" alt="LinkedIn" class="social-icon">
-      </a>
-    </div>
-
-    <button class="hamburger" aria-label="Open menu" aria-expanded="false">☰</button>
-  </header>
-
-  <div class="mobile-menu glass" role="dialog" aria-label="Menu">
-    <button class="nav-close" aria-label="Close menu">✕</button>
-    <nav aria-label="Mobile navigation">
-      <a href="/#home"    class="nav-link" data-sv="Hem"     data-en="Home"    data-nl="Thuis">Home</a>
-      <a href="/#about"   class="nav-link" data-sv="Om mig"  data-en="About"   data-nl="Over mij">About</a>
-      <a href="/blog/"    class="nav-link" data-sv="Blogg"   data-en="Blog"    data-nl="Blog">Blog</a>
-      <a href="/#contact" class="nav-link" data-sv="Kontakt" data-en="Contact" data-nl="Contact">Contact</a>
-    </nav>
-    <div class="mobile-menu-footer">
-      <div class="mobile-hue-wrap">
-        <input type="range" class="hue-slider" min="0" max="360" value="0" aria-label="Colour theme">
-      </div>
-      <div class="mobile-controls">
-        <a href="https://github.com/EmmaThaPemma" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <img src="/github-142-svgrepo-com.svg" alt="GitHub" class="social-icon">
-        </a>
-        <a href="https://www.linkedin.com/in/emma-it/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <img src="/linkedin-svgrepo-com.svg" alt="LinkedIn" class="social-icon">
-        </a>
-        <button class="lang-toggle" aria-label="Switch language">SV</button>
-      </div>
-    </div>
-  </div>
+  {% include navbar.html %}
+  {% include mobile-menu.html %}
 
   <main>
     {{ content }}
@@ -89,5 +17,4 @@
 
   <script src="/scripts.js" defer></script>
 </body>
-
 </html>

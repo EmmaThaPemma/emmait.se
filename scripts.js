@@ -49,7 +49,7 @@ const sectionObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       navLinks.forEach(l => l.classList.remove('active'));
-      const link = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+      const link = document.querySelector(`.nav-link[href$="#${entry.target.id}"]`);
       if (link) link.classList.add('active');
     }
   });

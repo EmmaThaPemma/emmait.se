@@ -3,5 +3,6 @@ _site/
 .jekyll-metadata
 Gemfile.lock
 vendor/
+.wrangler/
 CLAUDE.md
 .claude/
