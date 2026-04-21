@@ -17,6 +17,7 @@
       class="navbar-search-input"
       autocomplete="off"
       spellcheck="false"
+      {% if page.url == "/" %}autofocus{% endif %}
       aria-label="Search or enter address"
       aria-autocomplete="list"
       aria-controls="search-suggestions"
