@@ -9,7 +9,7 @@
     <a href="/blog/"    class="nav-link" data-sv="Blogg"   data-en="Blog"    data-nl="Blog">Blog</a>
     <a href="/#contact" class="nav-link" data-sv="Kontakt" data-en="Contact" data-nl="Contact">Contact</a>
   </nav>
-
+  
   <form action="https://duckduckgo.com/" method="get" class="navbar-search" role="search">
     <input
       type="search"
@@ -17,11 +17,11 @@
       class="navbar-search-input"
       autocomplete="off"
       spellcheck="false"
-      {% if page.url == "/" %}autofocus{% endif %} <!-- This sets the cursor to the search bar -->
+      {% if page.url == "/" %}autofocus{% endif %} 
       aria-label="Search or enter address"
       aria-autocomplete="list"
       aria-controls="search-suggestions"
-      aria-expanded="false">
+      aria-expanded="false"> <!-- The "autofocus" sets the cursor to the search bar -->
     <ul id="search-suggestions" class="search-suggestions glass" role="listbox" hidden></ul>
   </form>
 
