@@ -141,7 +141,7 @@ export default {
     let upstreamRes;
     try {
       upstreamRes = await fetch(
-        'https://duckduckgo.com/ac/?q=' + encodeURIComponent(q),
+        'https://duckduckgo.com/ac/?q=' + encodeURIComponent(q) + '&t=h_&ia=web&ct=SE',
         {
           headers: {
             'User-Agent': 'Mozilla/5.0 (emmait.se autocomplete proxy)',
